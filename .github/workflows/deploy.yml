@@ -8,6 +8,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./my-academy-site
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -17,13 +21,12 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: './my-academy-site/package-lock.json'
 
       - name: Install Dependencies
-        working-directory: ./my-academy-site
         run: npm install
 
       - name: Build
-        working-directory: ./my-academy-site
         run: npm run build
 
       - name: Deploy
