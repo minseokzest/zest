@@ -20,7 +20,7 @@ jobs:
 
       - name: Install Dependencies
         working-directory: ./my-academy-site
-        run: npm ci
+        run: npm install
 
       - name: Build
         working-directory: ./my-academy-site
