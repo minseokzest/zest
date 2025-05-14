@@ -2,10 +2,12 @@ import './App.css'
 
 function App() {
   return (
-    <div className="app">
-      <header className="header">
-        <h1 className="logo">ZEST</h1>
+    <div className="container">
+      <header>
         <nav>
+          <ul>
+            <li><strong>ZEST</strong></li>
+          </ul>
           <ul>
             <li><a href="#about">소개</a></li>
             <li><a href="#programs">프로그램</a></li>
@@ -16,16 +18,16 @@ function App() {
       </header>
 
       <main>
-        <section className="hero">
-          <div className="hero-content">
+        <section className="grid">
+          <article>
             <h2>팀 ZEST</h2>
-            <p className="hero-message">
+            <p>
               하늘을 바라만 보고는 것이 아닌<br />
               하늘을 날아 보는 것은 어떠세요?<br />
               팀 제스트가 실현 시켜 드리겠습니다.
             </p>
-            <button className="cta-button">시작하기</button>
-          </div>
+            <button>시작하기</button>
+          </article>
         </section>
       </main>
     </div>
