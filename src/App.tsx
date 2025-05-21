@@ -1,6 +1,7 @@
 import './App.css'
 import { motion } from 'framer-motion'
 import timelineImage from './assets/timeline.png'
+import ReactPlayer from 'react-player'
 import primaryTeacher from './assets/primary_teacher.png'
 import academyPanorama1 from './assets/academy_panorama_1.png'
 import academyPanorama2 from './assets/academy_panorama_2.png'
@@ -47,6 +48,55 @@ function App() {
       </motion.header>
 
       <main>
+        <motion.section
+          id="intro"
+          className="intro-section"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="intro-content">
+            <motion.div
+              className="intro-video-container"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <ReactPlayer
+                url="https://www.youtube.com/watch?v=unOutwB_puc"
+                width="100%"
+                height="100%"
+                style={{ aspectRatio: '16/9' }}
+                controls
+                playing
+              />
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              하늘을 바라만 보고는 아닌,<br />하늘을 날아 보는 것은 어떠세요?<br />
+              TEAM ZEST가 실현시켜 드리겠습니다.
+            </motion.p>
+            <motion.a
+              href="#contact"
+              className="intro-contact-btn"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              문의하기
+            </motion.a>
+          </div>
+        </motion.section>
+
         <motion.section
           id="timeline"
           className="timeline-section"
