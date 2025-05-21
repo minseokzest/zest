@@ -147,12 +147,6 @@ function App() {
                 exit={{ scale: 0.8, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <button 
-                  className="modal-close-btn"
-                  onClick={() => setIsTimelineModalOpen(false)}
-                >
-                  ✕
-                </button>
                 <img src={timelineImage} alt="TEAM ZEST Timeline" />
               </motion.div>
             </motion.div>
@@ -270,7 +264,7 @@ function App() {
                   <div className="address-content">
                     <div className="address-row">
                       <span className="address-label">도로명 주소</span>
-                      <span>서울 강남구 강남대로 570 선양빌딩 팀제스트 아크로바틱 마샬아츠 트릭킹 B1층</span>
+                      <span>서울 강남구 강남대로 570 선양빌딩<br />팀제스트 아크로바틱 마샬아츠 트릭킹 B1층</span>
                     </div>
                     <div className="address-row">
                       <span className="address-label">지번 주소</span>
