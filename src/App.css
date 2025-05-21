@@ -408,6 +408,51 @@ button:hover {
   justify-content: center;
 }
 
+.address-container {
+  margin-bottom: 1.5rem;
+}
+
+.address-item {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.address-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.address-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.address-label {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  min-width: 80px;
+}
+
+.address-row span:last-child {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .address-row {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .address-label {
+    min-width: auto;
+  }
+}
+
 .location-info h3 {
   font-size: 1.5rem;
   font-weight: bold;
@@ -422,7 +467,6 @@ button:hover {
 }
 
 .location-parking {
-  font-weight: bold;
   color: #222;
 }
 
@@ -635,4 +679,72 @@ button:hover {
   background: var(--primary-color);
   color: #fff;
   transform: translateY(-2px) scale(1.04);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 0.5rem;
+  }
+  
+  .modal-close-btn {
+    top: -1rem;
+    right: -1rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
 } 

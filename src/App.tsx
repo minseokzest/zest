@@ -1,13 +1,16 @@
 import './App.css'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import timelineImage from './assets/timeline.png'
 import ReactPlayer from 'react-player'
 import primaryTeacher from './assets/primary_teacher.png'
 import academyPanorama1 from './assets/academy_panorama_1.png'
 import academyPanorama2 from './assets/academy_panorama_2.png'
 import mapImage from './assets/map.png'
+import { useState } from 'react'
 
 function App() {
+  const [isTimelineModalOpen, setIsTimelineModalOpen] = useState(false);
+
   return (
     <div className="container">
       <motion.header
@@ -120,11 +123,41 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
+              onClick={() => setIsTimelineModalOpen(true)}
+              style={{ cursor: 'pointer' }}
             >
               <img src={timelineImage} alt="TEAM ZEST Timeline" />
             </motion.div>
           </div>
         </motion.section>
+
+        <AnimatePresence>
+          {isTimelineModalOpen && (
+            <motion.div
+              className="modal-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsTimelineModalOpen(false)}
+            >
+              <motion.div
+                className="modal-content"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button 
+                  className="modal-close-btn"
+                  onClick={() => setIsTimelineModalOpen(false)}
+                >
+                  ✕
+                </button>
+                <img src={timelineImage} alt="TEAM ZEST Timeline" />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <motion.section
           id="teacher"
@@ -232,7 +265,20 @@ function App() {
               <img src={mapImage} alt="오시는 길 지도" />
             </div>
             <div className="location-info">
-              <p>서울특별시 강남구 논현동 49번지 선양빌딩 B1F</p>
+              <div className="address-container">
+                <div className="address-item">
+                  <div className="address-content">
+                    <div className="address-row">
+                      <span className="address-label">도로명 주소</span>
+                      <span>서울 강남구 강남대로 570 선양빌딩 팀제스트 아크로바틱 마샬아츠 트릭킹 B1층</span>
+                    </div>
+                    <div className="address-row">
+                      <span className="address-label">지번 주소</span>
+                      <span>서울 강남구 논현동 49</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <p>
                 강남 논현역에서 7번출구로 나와 도보 30초로 직진하시면 오른쪽CU 편의점 건물 선양빌딩 지하1층 입니다.<br />
                 강남 신사역에서 3번출구로 나와 도보 1분 직진하시면 왼쪽 CU편의점 건물 선양빌딩 지하1층 입니다.<br />
