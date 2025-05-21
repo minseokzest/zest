@@ -1,7 +1,6 @@
 import './App.css'
 import { motion } from 'framer-motion'
 import timelineImage from './assets/timeline.png'
-import ReactPlayer from 'react-player'
 import primaryTeacher from './assets/primary_teacher.png'
 import academyPanorama1 from './assets/academy_panorama_1.png'
 import academyPanorama2 from './assets/academy_panorama_2.png'
@@ -48,42 +47,6 @@ function App() {
       </motion.header>
 
       <main>
-        <motion.section
-          id="hero"
-          className="hero-section"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="hero-content">
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.2 }}
-            >
-              하늘을 바라만 보고는 아닌, <br />
-              하늘을 날아 보는 것은 어떠세요?<br />
-              TEAM ZEST가 실현 시켜 드리겠습니다.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
-              className="video-container"
-            >
-              <ReactPlayer
-                url="https://www.youtube.com/watch?v=unOutwB_puc"
-                width="100%"
-                height="100%"
-                style={{ aspectRatio: '16/9' }}
-                controls
-                playing
-              />
-            </motion.div>
-            <a href="#contact" className="hero-contact-btn">문의하기</a>
-          </div>
-        </motion.section>
-
         <motion.section
           id="timeline"
           className="timeline-section"
