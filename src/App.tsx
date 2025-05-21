@@ -257,7 +257,7 @@ function App() {
             </motion.h3>
             <p className="contact-desc">팀 제스트와 함께 시작해보세요</p>
             <div className="contact-subsection">
-              <div className="contact-phone-label">전화</div>
+              <div className="contact-phone-label">전화 번호</div>
               <div className="contact-phone-list">
                 <a href="sms:01020349744" className="contact-phone-btn">010-2034-9744</a>
                 <a href="sms:01083451775" className="contact-phone-btn">010-8345-1775</a>
