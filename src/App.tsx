@@ -313,7 +313,6 @@ function App() {
               <div className="contact-phone-label">전화 번호</div>
               <div className="contact-phone-list">
                 <a href="sms:01020349744" className="contact-phone-btn">010-2034-9744</a>
-                <a href="sms:01083451775" className="contact-phone-btn">010-8345-1775</a>
               </div>
             </div>
             <div className="contact-subsection contact-links-section">
