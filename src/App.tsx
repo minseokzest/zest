@@ -10,7 +10,6 @@ import { useState } from 'react'
 
 function App() {
   const [isTimelineModalOpen, setIsTimelineModalOpen] = useState(false);
-
   return (
     <div className="container">
       <motion.header
