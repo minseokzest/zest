@@ -6,10 +6,22 @@ import primaryTeacher from './assets/primary_teacher.png'
 import academyPanorama1 from './assets/academy_panorama_1.png'
 import academyPanorama2 from './assets/academy_panorama_2.png'
 import mapImage from './assets/map.png'
+import zestHead1 from './assets/zest-head1.png'
+import intro1 from './assets/intro_1.png'
+import picture1 from './assets/picture1.jpeg'
+import picture2 from './assets/picture2.jpeg'
+import picture3 from './assets/picture3.jpeg'
+import picture4 from './assets/picture4.jpeg'
+import picture5 from './assets/picture5.jpeg'
+import picture6 from './assets/picture6.jpeg'
+import picture7 from './assets/picture7.png'
+import picture8 from './assets/picture8.png'
 import { useState } from 'react'
 
 function App() {
   const [isTimelineModalOpen, setIsTimelineModalOpen] = useState(false);
+  const [isPictureModalOpen, setIsPictureModalOpen] = useState(false);
+  const [selectedPicture, setSelectedPicture] = useState('');
 
   return (
     <div className="container">
@@ -100,6 +112,57 @@ function App() {
           </div>
         </motion.section>
 
+        <motion.div
+          className="zest-head-full"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <img src={zestHead1} alt="TEAM ZEST Head" />
+        </motion.div>
+
+        <motion.section
+          id="teacher"
+          className="teacher-section"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="teacher-content">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              강사 소개
+            </motion.h2>
+            <motion.div
+              className="teacher-image-container"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="teacher-card">
+                <img src={primaryTeacher} alt="주요 강사" />
+                <div className="teacher-name">오민석 대표 원장</div>
+              </div>
+            </motion.div>
+            <motion.div
+              className="intro1-image-container"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <img src={intro1} alt="TEAM ZEST Intro" />
+            </motion.div>
+          </div>
+        </motion.section>
+
         <motion.section
           id="timeline"
           className="timeline-section"
@@ -154,67 +217,126 @@ function App() {
         </AnimatePresence>
 
         <motion.section
-          id="teacher"
-          className="teacher-section"
+          id="pictures"
+          className="pictures-section"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="teacher-content">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              강사 소개
-            </motion.h2>
-            <motion.div
-              className="teacher-image-container"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="teacher-card">
-                <img src={primaryTeacher} alt="주요 강사" />
-                <div className="teacher-name">오민석 원장</div>
-                <div className="teacher-desc">전문 아크로바틱 & 트릭킹 강사</div>
-              </div>
-            </motion.div>
-          </div>
-        </motion.section>
-
-        <motion.section
-          id="facility"
-          className="facility-section"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="facility-content">
+          <div className="pictures-content">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              시설 안내
+              사진
             </motion.h3>
             <motion.div
-              className="facility-images"
+              className="pictures-grid"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <img src={academyPanorama1} alt="아카데미 파노라마 1" />
-              <img src={academyPanorama2} alt="아카데미 파노라마 2" />
+              <img 
+                src={picture1} 
+                alt="TEAM ZEST Picture 1" 
+                onClick={() => {
+                  setSelectedPicture(picture1);
+                  setIsPictureModalOpen(true);
+                }}
+                style={{ cursor: 'pointer' }}
+              />
+              <img 
+                src={picture2} 
+                alt="TEAM ZEST Picture 2" 
+                onClick={() => {
+                  setSelectedPicture(picture2);
+                  setIsPictureModalOpen(true);
+                }}
+                style={{ cursor: 'pointer' }}
+              />
+              <img 
+                src={picture3} 
+                alt="TEAM ZEST Picture 3" 
+                onClick={() => {
+                  setSelectedPicture(picture3);
+                  setIsPictureModalOpen(true);
+                }}
+                style={{ cursor: 'pointer' }}
+              />
+              <img 
+                src={picture4} 
+                alt="TEAM ZEST Picture 4" 
+                onClick={() => {
+                  setSelectedPicture(picture4);
+                  setIsPictureModalOpen(true);
+                }}
+                style={{ cursor: 'pointer' }}
+              />
+              <img 
+                src={picture5} 
+                alt="TEAM ZEST Picture 5" 
+                onClick={() => {
+                  setSelectedPicture(picture5);
+                  setIsPictureModalOpen(true);
+                }}
+                style={{ cursor: 'pointer' }}
+              />
+              <img 
+                src={picture6} 
+                alt="TEAM ZEST Picture 6" 
+                onClick={() => {
+                  setSelectedPicture(picture6);
+                  setIsPictureModalOpen(true);
+                }}
+                style={{ cursor: 'pointer' }}
+              />
+              <img 
+                src={picture7} 
+                alt="TEAM ZEST Picture 7" 
+                onClick={() => {
+                  setSelectedPicture(picture7);
+                  setIsPictureModalOpen(true);
+                }}
+                style={{ cursor: 'pointer' }}
+              />
+              <img 
+                src={picture8} 
+                alt="TEAM ZEST Picture 8" 
+                onClick={() => {
+                  setSelectedPicture(picture8);
+                  setIsPictureModalOpen(true);
+                }}
+                style={{ cursor: 'pointer' }}
+              />
             </motion.div>
           </div>
         </motion.section>
+
+        <AnimatePresence>
+          {isPictureModalOpen && (
+            <motion.div
+              className="modal-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsPictureModalOpen(false)}
+            >
+              <motion.div
+                className="modal-content"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img src={selectedPicture} alt="TEAM ZEST Picture" />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <motion.section
           id="program"

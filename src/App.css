@@ -1,27 +1,29 @@
 :root {
-  --primary-color: #1a73e8;
-  --secondary-color: #4285f4;
-  --text-color: #202124;
-  --background-color: #ffffff;
-  --border-color: #dadce0;
+  --primary-color: #ff4444;
+  --secondary-color: #ff6666;
+  --text-color: #ffffff;
+  --background-color: #1a1a1a;
+  --border-color: #333333;
 }
 
 html {
-  background-color: #ffffff !important;
-  color-scheme: light;
+  background-color: #1a1a1a !important;
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
 
 .container {
   max-width: 100vw !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  background-color: #ffffff;
+  background-color: #1a1a1a;
 }
 
 header {
@@ -29,7 +31,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background: #ffffff;
+  background: #1a1a1a;
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
   padding: 1rem 0;
@@ -98,8 +100,8 @@ main {
 .intro-contact-btn {
   display: inline-block;
   padding: 0.8rem 2.5rem;
-  background: white;
-  color: var(--primary-color);
+  background: var(--primary-color);
+  color: white;
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 30px;
@@ -111,6 +113,7 @@ main {
 .intro-contact-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
@@ -141,7 +144,7 @@ main {
 
 .timeline-section {
   padding: 6rem 2rem;
-  background: #ffffff;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 .timeline-content {
@@ -153,7 +156,13 @@ main {
 .timeline-content h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: var(--text-color);
+  color: #ffffff;
+}
+
+.timeline-content h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
 }
 
 .timeline-container {
@@ -210,7 +219,7 @@ button:hover {
 
 .teacher-section {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: #1a1a1a;
   color: white;
 }
 
@@ -226,11 +235,14 @@ button:hover {
 .teacher-image-container {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .teacher-card {
-  background: white;
+  background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
@@ -239,6 +251,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .teacher-card img {
@@ -251,13 +264,13 @@ button:hover {
 .teacher-card .teacher-name {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #222;
+  color: #222222;
   margin-bottom: 0.3rem;
 }
 
 .teacher-card .teacher-desc {
   font-size: 1.05rem;
-  color: #555;
+  color: #555555;
   text-align: center;
 }
 
@@ -265,9 +278,24 @@ button:hover {
   color: white;
 }
 
+.intro1-image-container {
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.intro1-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
 .facility-section {
   padding: 6rem 2rem;
-  background: #ffffff;
+  background: #1a1a1a;
 }
 
 .facility-content {
@@ -277,9 +305,15 @@ button:hover {
 }
 
 .facility-content h2 {
-  color: var(--text-color);
+  color: #ffffff;
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
+}
+
+.facility-content h3 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
 }
 
 .facility-images {
@@ -355,7 +389,7 @@ button:hover {
 
 .program-desc {
   font-size: 1.1rem;
-  color: #eaf6ff;
+  color: #ffffff;
   margin-top: 1.5rem;
   line-height: 1.7;
 }
@@ -369,7 +403,7 @@ button:hover {
 
 .location-section {
   padding: 6rem 2rem;
-  background: #ffffff;
+  background: #1a1a1a;
 }
 
 .location-content {
@@ -402,14 +436,14 @@ button:hover {
   text-align: center;
   font-size: 2.2rem;
   font-weight: bold;
-  color: #222;
+  color: #ffffff;
   margin-bottom: 2.5rem;
 }
 
 .location-info {
   flex: 2 1 400px;
   min-width: 280px;
-  color: #222;
+  color: #ffffff;
   font-size: 1.1rem;
   display: flex;
   flex-direction: column;
@@ -421,7 +455,7 @@ button:hover {
 }
 
 .address-item {
-  background: #f8f9fa;
+  background: #333333;
   padding: 1rem;
   border-radius: 8px;
 }
@@ -448,6 +482,7 @@ button:hover {
 .address-row span:last-child {
   font-size: 0.95rem;
   line-height: 1.4;
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -466,11 +501,11 @@ button:hover {
 .location-info p {
   margin-bottom: 1rem;
   line-height: 1.7;
-  color: #222;
+  color: #ffffff;
 }
 
 .location-parking {
-  color: #222;
+  color: #ffffff;
 }
 
 .location-map-btn {
@@ -526,7 +561,7 @@ button:hover {
 .contact-desc {
   font-size: 1.2rem;
   margin-bottom: 1.2rem;
-  color: #eaf6ff;
+  color: #ffffff;
 }
 
 .contact-phone-list {
@@ -692,9 +727,9 @@ button:hover {
 
 .modal-content {
   position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
-  background: #ffffff;
+  max-width: 95vw;
+  max-height: 95vh;
+  background: #333333;
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -703,7 +738,7 @@ button:hover {
 .modal-content img {
   width: 100%;
   height: auto;
-  max-height: 85vh;
+  max-height: 90vh;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -717,5 +752,78 @@ button:hover {
 @media (max-width: 768px) {
   .contact-links-section {
     margin-top: 0.5rem;
+  }
+}
+
+.zest-head-full {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.zest-head-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .teacher-image-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .intro1-image-container {
+    margin-top: 0;
+  }
+}
+
+.pictures-section {
+  padding: 6rem 2rem;
+  background: #1a1a1a;
+}
+
+.pictures-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pictures-content h3 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.pictures-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.pictures-grid img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transition: transform 0.3s ease;
+  background-color: #333333;
+}
+
+.pictures-grid img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .pictures-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .pictures-grid img {
+    height: 350px;
   }
 } 
